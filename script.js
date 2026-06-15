@@ -78,7 +78,9 @@ Espero que este nuevo año te traiga felicidad,
 éxitos y muchos momentos hermosos.
 Feliz cumpleaños, Lina ❤️`;
 
-setTimeout(() => {
+function iniciarSorpresa() {
+
+    document.getElementById("textoSecreto").innerText = "";
 
     document
         .getElementById("secreto")
@@ -109,8 +111,7 @@ setTimeout(() => {
 
     }, 3000);
 
-}, 10000);
-
+}
 
 window.onload = function () {
 
