@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="login">
+    <h1>❤️ SISTEMA DE ACCESO ❤️</h1>
+
+    <input
+        type="text"
+        id="nombre"
+        placeholder="¿Cómo te llamo normalmente?"
+    >
+
+    <br><br>
+
+    <button onclick="verificarNombre()">
+        Entrar
+    </button>
+
+    <p id="error"></p>
+</div>
+
+<div id="contenido" style="display:none;">
+<div class="contenedor">
+
+    <h1> FELIZ CUMPLEAÑOS 🎂</h1>
+
+    <h2>REYSABELIA CRESPO</h2>
+
+    <h3>19 ➜ 20 = 20 ❤️</h3>
+
+    <p class="mensaje">
+        Que este año de vida te traiga
+        felicidad, éxitos y momentos hermosos.
+    </p>
+
+</div>
+
+
+<div id="secreto" class="secreto">
+    <h2>❤️ MENSAJE DESBLOQUEADO ❤️</h2>
+    <p id="textoSecreto"></p>
+</div>
+
+<script src="script.js"></script>
+
+<div id="corazonLuz"></div>
+
+<canvas id="particulas"></canvas>
+
+<button id="btnMusica">🎵 Iniciar Sorpresa 🎵</button>
+
+<audio id="musica" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+</div>
+</body>
+</html>

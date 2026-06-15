@@ -1,0 +1,272 @@
+body{
+    margin:0;
+    background:black;
+    color:white;
+    overflow-x:hidden;
+    overflow-y:auto;
+    font-family:Arial, sans-serif;
+}
+
+.contenedor{
+    position:absolute;
+    width:100%;
+    text-align:center;
+    top:3%;
+    z-index:10;
+}
+
+h1{
+    color:#ff4d4d;
+    font-size:50px;
+    text-shadow:
+        0 0 10px #ff4d4d,
+        0 0 20px #ff4d4d,
+        0 0 40px #ff4d4d;
+}
+
+h2{
+    color:#4da6ff;
+    font-size:42px;
+    margin-top:-15px;
+}
+
+h3{
+    font-size:35px;
+    margin-top:-15px;
+}
+
+.edad{
+    font-size:30px;
+    color:#4da6ff;
+    margin-top:10px;
+}
+
+.mensaje{
+    font-size:24px;
+    margin-top:-15px;
+}
+
+.corazon{
+    position:absolute;
+    top:55%;
+    left:50%;
+    width:200px;
+    height:200px;
+    background:red;
+    transform:translate(-50%, -50%) rotate(-45deg);
+    animation:latido 1s infinite;
+}
+
+.corazon::before,
+.corazon::after{
+    content:"";
+    position:absolute;
+    width:200px;
+    height:200px;
+    background:red;
+    border-radius:50%;
+}
+
+.corazon::before{
+    top:-100px;
+}
+
+.corazon::after{
+    left:100px;
+}
+
+@keyframes latido{
+    0%{
+        transform:translate(-50%, -50%) rotate(-45deg) scale(1);
+    }
+
+    50%{
+        transform:translate(-50%, -50%) rotate(-45deg) scale(1.15);
+    }
+
+    100%{
+        transform:translate(-50%, -50%) rotate(-45deg) scale(1);
+    }
+}
+
+.secreto{
+    opacity:0;
+    position:absolute;
+    width:70%;
+    left:15%;
+    top:55%;
+    z-index:20;
+
+    background:rgba(0,0,0,0.85);
+    border:2px solid #4da6ff;
+    border-radius:20px;
+
+    padding:20px;
+
+    text-align:center;
+
+    transition:2s;
+
+    max-height:40vh;
+    overflow-y:auto;
+}
+
+.secreto.mostrar{
+    opacity:1;
+}
+
+.secreto h2{
+    color:#4da6ff;
+}
+
+.secreto p{
+    font-size:20px;
+    color:#dddddd;
+    line-height:1.7;
+}
+
+#particulas{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:5;
+    pointer-events:none;
+}
+
+.secreto h2{
+    color:#4da6ff;
+    text-shadow:0 0 10px #4da6ff;
+}
+
+#textoSecreto{
+    white-space: pre-wrap;
+    line-height: 1.8;
+    text-align: left;
+}
+
+#btnMusica{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    padding:15px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:15px;
+    cursor:pointer;
+    background:#4da6ff;
+    color:white;
+    z-index:9999;
+}
+
+#corazonLuz{
+    position:fixed;
+    top:55%;
+    left:50%;
+
+    width:120px;
+    height:120px;
+
+    background:#4da6ff;
+
+    transform:translate(-50%, -50%) rotate(-45deg);
+
+    opacity:0;
+
+    z-index:15;
+
+    transition:2s;
+
+    box-shadow:
+    0 0 30px #4da6ff,
+    0 0 60px #4da6ff,
+    0 0 120px #4da6ff,
+    0 0 200px #4da6ff;
+
+    animation: neon 1.5s infinite alternate;
+}
+#corazonLuz::before,
+#corazonLuz::after{
+    content:"";
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    background:#4da6ff;
+
+    border-radius:50%;
+}
+#corazonLuz::before{
+    top:-60px;
+}
+
+#corazonLuz::after{
+    left:60px;
+}
+
+#corazonLuz.mostrar{
+    opacity:1;
+}
+
+#corazonLuz.mostrar{
+    opacity:1;
+}
+
+@keyframes neon{
+
+    from{
+
+        filter: brightness(1);
+
+    }
+
+    to{
+
+        filter: brightness(1.8);
+
+    }
+
+}
+
+#login{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    background:black;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    z-index:99999;
+}
+
+#login input{
+    padding:15px;
+    width:300px;
+    font-size:18px;
+    border-radius:10px;
+    border:none;
+}
+
+#login button{
+    padding:12px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+
+    background:#4da6ff;
+    color:white;
+}
+
+#error{
+    color:red;
+    margin-top:15px;
+}
