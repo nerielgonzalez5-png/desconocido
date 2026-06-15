@@ -100,13 +100,13 @@ setTimeout(() => {
     }
 
     escribir();
-    
+
     setTimeout(() => {
 
-    document
-        .getElementById("corazonLuz")
-        .classList.add("mostrar");
-    
+        document
+            .getElementById("corazonLuz")
+            .classList.add("mostrar");
+
     }, 3000);
 
 }, 10000);
