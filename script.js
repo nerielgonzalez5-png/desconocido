@@ -1,28 +1,69 @@
-function verificarNombre(){
+function verificarNombre() {
 
-    let nombre =
-        document
+    let nombre = document
         .getElementById("nombre")
         .value
         .toLowerCase()
         .trim();
 
-    if(nombre === "lina"){
+    let mensaje = document.getElementById("error");
 
-        document
-        .getElementById("login")
-        .style.display = "none";
+    if (nombre === "lina") {
 
-        document
-        .getElementById("contenido")
-        .style.display = "block";
+        mensaje.innerHTML = "✓ Lina detectada";
 
-    }else{
+        setTimeout(() => {
+            mensaje.innerHTML += "<br><br>Buscando felicidad...";
+        }, 1000);
 
-        document
-        .getElementById("error")
-        .innerText =
-        "ta's pendeja, intenta nuevamente.";
+        setTimeout(() => {
+            mensaje.innerHTML += "<br>Buscando sonrisas...";
+        }, 2000);
+
+        setTimeout(() => {
+            mensaje.innerHTML += "<br>Buscando recuerdos...";
+        }, 3000);
+
+        setTimeout(() => {
+            mensaje.innerHTML += "<br><br> FELIZ CUMPLEAÑOS 🎂";
+        }, 4000);
+
+        setTimeout(() => {
+            mensaje.innerHTML += "<br><br>Edad actual: 19";
+        }, 5000);
+
+        setTimeout(() => {
+            mensaje.innerHTML += "<br>Actualizando edad...";
+        }, 6000);
+
+        setTimeout(() => {
+            mensaje.innerHTML += "<br><br>19 ➜ 20 ❤️";
+        }, 8000);
+
+        setTimeout(() => {
+            mensaje.innerHTML += "<br><br>✨ NUEVA ETAPA DESBLOQUEADA = 20 años ¡¡tas vieja!! ✨";
+        }, 9000);
+
+        setTimeout(() => {
+            mensaje.innerHTML += "<br><br>Este programa fue creado especialmente para ti.";
+        }, 10000);
+
+        setTimeout(() => {
+            mensaje.innerHTML += "<br>Espero que tengas un día increíble ❤️";
+        }, 11000);
+
+        setTimeout(() => {
+            mensaje.innerHTML += "<br><br>Abriendo sorpresa...";
+        }, 12000);
+
+        setTimeout(() => {
+            document.getElementById("login").style.display = "none";
+            document.getElementById("contenido").style.display = "block";
+        }, 14000);
+
+    } else {
+
+        mensaje.innerHTML = "❌ ta's pendeja, intenta nuevamente.";
 
     }
 }
@@ -141,4 +182,3 @@ function animate(){
 }
 
 animate();
-
