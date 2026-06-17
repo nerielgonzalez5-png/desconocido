@@ -66,21 +66,6 @@ function iniciarSorpresa() {
 
 }
 
-window.onload = function () {
-
-    const boton = document.getElementById("btnMusica");
-    const musica = document.getElementById("musica");
-
-    boton.addEventListener("click", () => {
-
-        musica.play();
-
-        boton.style.display = "none";
-
-    });
-
-};
-
 const canvas = document.getElementById("particulas");
 const ctx = canvas.getContext("2d");
 
