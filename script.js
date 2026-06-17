@@ -11,9 +11,8 @@ function verificarNombre() {
     if (nombre === "lina") {
 
         mensaje.innerHTML = "✓ Lina detectada";
-        
+
         document.getElementById("btnContinuar").style.display = "inline-block";
-        setTimeout(() => {
 
     } else {
 
