@@ -11,59 +11,9 @@ function verificarNombre() {
     if (nombre === "lina") {
 
         mensaje.innerHTML = "✓ Lina detectada";
-
+        
+        document.getElementById("btnContinuar").style.display = "inline-block";
         setTimeout(() => {
-            mensaje.innerHTML += "<br><br>Buscando felicidad...";
-        }, 1000);
-
-        setTimeout(() => {
-            mensaje.innerHTML += "<br>Buscando sonrisas...";
-        }, 2000);
-
-        setTimeout(() => {
-            mensaje.innerHTML += "<br>Buscando recuerdos...";
-        }, 3000);
-
-        setTimeout(() => {
-            mensaje.innerHTML += "<br><br> FELIZ CUMPLEAÑOS 🎂";
-        }, 4000);
-
-        setTimeout(() => {
-            mensaje.innerHTML += "<br><br>Edad actual: 19";
-        }, 5000);
-
-        setTimeout(() => {
-            mensaje.innerHTML += "<br>Actualizando edad...";
-        }, 6000);
-
-        setTimeout(() => {
-            mensaje.innerHTML += "<br><br>19 ➜ 20 ❤️";
-        }, 8000);
-
-        setTimeout(() => {
-            mensaje.innerHTML += "<br><br>✨ NUEVA ETAPA DESBLOQUEADA = 20 años ¡¡tas vieja!! ✨";
-        }, 9000);
-
-        setTimeout(() => {
-            mensaje.innerHTML += "<br><br>Este programa fue creado especialmente para ti.";
-        }, 10000);
-
-        setTimeout(() => {
-            mensaje.innerHTML += "<br>Espero que tengas un día increíble ❤️";
-        }, 11000);
-
-        setTimeout(() => {
-            mensaje.innerHTML += "<br><br>Abriendo sorpresa...";
-        }, 12000);
-
-        setTimeout(() => {
-            
-            document.getElementById("login").style.display = "none";
-            document.getElementById("contenido").style.display = "block";
-            
-            iniciarSorpresa();
-
-        }, 14000);
 
     } else {
 
@@ -187,3 +137,67 @@ function animate(){
 }
 
 animate();
+
+document.getElementById("btnContinuar").addEventListener("click", () => {
+
+    const mensaje = document.getElementById("error");
+    const musica = document.getElementById("musica");
+
+    musica.play();
+
+    document.getElementById("btnContinuar").style.display = "none";
+
+    setTimeout(() => {
+        mensaje.innerHTML += "<br><br>Buscando felicidad...";
+    }, 1000);
+
+    setTimeout(() => {
+        mensaje.innerHTML += "<br>Buscando sonrisas...";
+    }, 2000);
+
+    setTimeout(() => {
+        mensaje.innerHTML += "<br>Buscando recuerdos...";
+    }, 3000);
+
+    setTimeout(() => {
+        mensaje.innerHTML += "<br><br>🎂 FELIZ CUMPLEAÑOS 🎂";
+    }, 4000);
+
+    setTimeout(() => {
+        mensaje.innerHTML += "<br><br>Edad actual: 19";
+    }, 5000);
+
+    setTimeout(() => {
+        mensaje.innerHTML += "<br>Actualizando edad...";
+    }, 6000);
+
+    setTimeout(() => {
+        mensaje.innerHTML += "<br><br>19 ➜ 20 ❤️";
+    }, 8000);
+
+    setTimeout(() => {
+        mensaje.innerHTML += "<br><br>✨ NUEVA ETAPA DESBLOQUEADA = 20 años ¡¡tas vieja!! ✨";
+    }, 9000);
+
+    setTimeout(() => {
+        mensaje.innerHTML += "<br><br>Este programa fue creado especialmente para ti.";
+    }, 10000);
+
+    setTimeout(() => {
+        mensaje.innerHTML += "<br>Espero que tengas un día increíble ❤️";
+    }, 11000);
+
+    setTimeout(() => {
+        mensaje.innerHTML += "<br><br>Abriendo sorpresa...";
+    }, 12000);
+
+    setTimeout(() => {
+
+        document.getElementById("login").style.display = "none";
+        document.getElementById("contenido").style.display = "block";
+
+        iniciarSorpresa();
+
+    }, 14000);
+
+});
