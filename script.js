@@ -138,8 +138,8 @@ function animate(){
 animate();
 
 document.getElementById("btnContinuar").onclick = function() {
+
     alert("CLICK DETECTADO");
-};
 
     const mensaje = document.getElementById("error");
     const musica = document.getElementById("musica");
@@ -201,4 +201,4 @@ document.getElementById("btnContinuar").onclick = function() {
 
     }, 14000);
 
-});
+};
