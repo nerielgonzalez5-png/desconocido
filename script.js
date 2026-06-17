@@ -137,9 +137,9 @@ function animate(){
 
 animate();
 
-document.getElementById("btnContinuar").addEventListener("click", () => {
-
+document.getElementById("btnContinuar").onclick = function() {
     alert("CLICK DETECTADO");
+};
 
     const mensaje = document.getElementById("error");
     const musica = document.getElementById("musica");
