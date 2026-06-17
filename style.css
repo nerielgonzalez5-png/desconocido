@@ -270,3 +270,58 @@ h3{
     color:red;
     margin-top:15px;
 }
+
+@media (max-width: 600px){
+
+    h1{
+        font-size: 32px;
+    }
+
+    h2{
+        font-size: 24px;
+    }
+
+    h3{
+        font-size: 20px;
+    }
+
+    .mensaje{
+        font-size: 18px;
+        padding: 0 15px;
+    }
+
+    #corazonLuz{
+        width: 90px;
+        height: 90px;
+        top: 45%;
+    }
+
+    #corazonLuz::before,
+    #corazonLuz::after{
+        width: 90px;
+        height: 90px;
+    }
+
+    #corazonLuz::before{
+        top: -45px;
+    }
+
+    #corazonLuz::after{
+        left: 45px;
+    }
+
+    .secreto{
+        width: 85%;
+        left: 7.5%;
+        top: 55%;
+        max-height: 30vh;
+    }
+
+    #btnMusica{
+        bottom: 10px;
+        right: 10px;
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+
+}
