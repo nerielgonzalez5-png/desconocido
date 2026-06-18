@@ -199,3 +199,54 @@ document.getElementById("btnGalaxia").onclick = function() {
     document.getElementById("galaxia").style.display = "block";
 
 };
+
+const galaxiaCanvas = document.getElementById("galaxiaCanvas");
+
+if(galaxiaCanvas){
+
+    const gctx = galaxiaCanvas.getContext("2d");
+
+    galaxiaCanvas.width = window.innerWidth;
+    galaxiaCanvas.height = window.innerHeight;
+
+    let estrellas = [];
+
+    for(let i = 0; i < 400; i++){
+
+        estrellas.push({
+            x: Math.random() * galaxiaCanvas.width,
+            y: Math.random() * galaxiaCanvas.height,
+            r: Math.random() * 2,
+            v: Math.random() * 0.3 + 0.1
+        });
+
+    }
+
+    function animarGalaxia(){
+
+        gctx.fillStyle = "black";
+        gctx.fillRect(0,0,galaxiaCanvas.width,galaxiaCanvas.height);
+
+        estrellas.forEach(e=>{
+
+            gctx.beginPath();
+            gctx.arc(e.x,e.y,e.r,0,Math.PI*2);
+            gctx.fillStyle = "white";
+            gctx.fill();
+
+            e.y += e.v;
+
+            if(e.y > galaxiaCanvas.height){
+                e.y = 0;
+                e.x = Math.random() * galaxiaCanvas.width;
+            }
+
+        });
+
+        requestAnimationFrame(animarGalaxia);
+
+    }
+
+    animarGalaxia();
+
+}
