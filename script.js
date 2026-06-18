@@ -213,18 +213,18 @@ if(galaxiaCanvas){
 
     let estrellas = [];
 
-    for(let i = 0; i < 10000; i++){
+    for(let i = 0; i < 500; i++){
 
-        estrellas.push({
-            x: Math.random() * galaxiaCanvas.width,
-            y: Math.random() * galaxiaCanvas.height,
-            r: Math.random() * 4 + 1,
-            v: Math.random() * 0.3 + 0.1,
-            alpha: Math.random(),
-            dir: Math.random() > 0.5 ? 1 : -1
-        });
+    estrellas.push({
+        x: Math.random() * galaxiaCanvas.width,
+        y: Math.random() * galaxiaCanvas.height,
+        r: Math.random() * 8 + 3,
+        v: Math.random() * 0.2 + 0.05,
+        alpha: Math.random(),
+        dir: Math.random() > 0.5 ? 1 : -1
+    });
 
-    }
+}
 
     function animarGalaxia(){
 
@@ -263,10 +263,9 @@ if(galaxiaCanvas){
             
     gctx.fill();
             
-    gctx.fillStyle =
-    colores[Math.floor(Math.random() * colores.length)];
-    gctx.fill();
-
+    gctx.shadowBlur = 15;
+    gctx.shadowColor = "white";
+            
     gctx.globalAlpha = 1;
 
     e.y += e.v;
