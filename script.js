@@ -250,22 +250,20 @@ if(galaxiaCanvas){
 
     gctx.beginPath();
     gctx.arc(e.x,e.y,e.r,0,Math.PI*2);
-    const colores = [
-    "#ffffff",
-    "#87cefa",
-    "#b19cd9",
-    "#add8e6"
-
-    gctx.fillStyle = "red";
-gctx.fillRect(100,100,200,200);
-
-gctx.fillStyle = "white";
-gctx.font = "30px Arial";
-gctx.fillText("ESTRELLAS TEST", 50, 50);
             
+    const colores = [
+        "#ffffff",
+        "#87cefa",
+        "#b19cd9",
+        "#add8e6"
 ];
-
-gctx.fillStyle =
+            
+    gctx.fillStyle =
+    colores[Math.floor(Math.random() * colores.length)];
+            
+    gctx.fill();
+            
+    gctx.fillStyle =
     colores[Math.floor(Math.random() * colores.length)];
     gctx.fill();
 
