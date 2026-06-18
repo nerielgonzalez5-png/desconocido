@@ -231,19 +231,33 @@ if(galaxiaCanvas){
 
         estrellas.forEach(e=>{
 
-            gctx.beginPath();
-            gctx.arc(e.x,e.y,e.r,0,Math.PI*2);
-            gctx.fillStyle = "white";
-            gctx.fill();
+    e.alpha += 0.01 * e.dir;
 
-            e.y += e.v;
+    if(e.alpha > 1){
+        e.dir = -1;
+    }
 
-            if(e.y > galaxiaCanvas.height){
-                e.y = 0;
-                e.x = Math.random() * galaxiaCanvas.width;
-            }
+    if(e.alpha < 0.2){
+        e.dir = 1;
+    }
 
-        });
+    gctx.globalAlpha = e.alpha;
+
+    gctx.beginPath();
+    gctx.arc(e.x,e.y,e.r,0,Math.PI*2);
+    gctx.fillStyle = "white";
+    gctx.fill();
+
+    gctx.globalAlpha = 1;
+
+    e.y += e.v;
+
+    if(e.y > galaxiaCanvas.height){
+        e.y = 0;
+        e.x = Math.random() * galaxiaCanvas.width;
+    }
+
+});
 
         requestAnimationFrame(animarGalaxia);
 
