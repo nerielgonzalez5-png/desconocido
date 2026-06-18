@@ -213,7 +213,7 @@ if(galaxiaCanvas){
 
     let estrellas = [];
 
-    for(let i = 0; i < 2000; i++){
+    for(let i = 0; i < 10000; i++){
 
         estrellas.push({
             x: Math.random() * galaxiaCanvas.width,
