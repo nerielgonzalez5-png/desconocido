@@ -235,8 +235,8 @@ if(galaxiaCanvas){
         gctx.fillText("ESTRELLAS TEST", 50, 50);
 
         estrellas.forEach(e=>{
-
-    e.alpha += 0.01 * e.dir;
+            
+            e.alpha += 0.01 * e.dir;
 
     if(e.alpha > 1){
         e.dir = -1;
@@ -255,6 +255,14 @@ if(galaxiaCanvas){
     "#87cefa",
     "#b19cd9",
     "#add8e6"
+
+    gctx.fillStyle = "red";
+gctx.fillRect(100,100,200,200);
+
+gctx.fillStyle = "white";
+gctx.font = "30px Arial";
+gctx.fillText("ESTRELLAS TEST", 50, 50);
+            
 ];
 
 gctx.fillStyle =
