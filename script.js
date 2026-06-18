@@ -228,11 +228,11 @@ if(galaxiaCanvas){
 
     function animarGalaxia(){
 
-        gctx.fillStyle = "black";
-        gctx.fillRect(0,0,galaxiaCanvas.width,galaxiaCanvas.height);
+        gctx.fillStyle = "red";
+        gctx.fillRect(100,100,200,200);
         gctx.fillStyle = "white";
         gctx.font = "30px Arial";
-        gctx.fillText("ESTRELLAS TEST", 50, 50);
+        gctx.fillText("TEST", 150, 220);
 
         estrellas.forEach(e=>{
             
