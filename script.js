@@ -216,7 +216,7 @@ if(galaxiaCanvas){
         estrellas.push({
             x: Math.random() * galaxiaCanvas.width,
             y: Math.random() * galaxiaCanvas.height,
-            r: Math.random() * 2,
+            r: Math.random() * 3 + 0.5,
             v: Math.random() * 0.3 + 0.1
         });
 
