@@ -111,7 +111,7 @@ function animate(){
 
         ctx.fill();
 
-        gctx.globalAlpha = 1;
+        ctx.globalAlpha = 1;
 
         p.y -= p.speed;
 
@@ -219,7 +219,7 @@ if(galaxiaCanvas){
             x: Math.random() * galaxiaCanvas.width,
             y: Math.random() * galaxiaCanvas.height,
             r: Math.random() * 3 + 0.5,
-            v: Math.random() * 0.3 + 0.1
+            v: Math.random() * 0.3 + 0.1,
             alpha: Math.random(),
             dir: Math.random() > 0.5 ? 1 : -1
         });
