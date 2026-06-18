@@ -1,4 +1,3 @@
-alert("SCRIPT NUEVO CARGADO");
 function verificarNombre() {
 
     let nombre = document
