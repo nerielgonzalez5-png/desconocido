@@ -213,12 +213,12 @@ if(galaxiaCanvas){
 
     let estrellas = [];
 
-    for(let i = 0; i < 400; i++){
+    for(let i = 0; i < 1000; i++){
 
         estrellas.push({
             x: Math.random() * galaxiaCanvas.width,
             y: Math.random() * galaxiaCanvas.height,
-            r: Math.random() * 3 + 0.5,
+            r: Math.random() * 4 + 1,
             v: Math.random() * 0.3 + 0.1,
             alpha: Math.random(),
             dir: Math.random() > 0.5 ? 1 : -1
@@ -250,7 +250,15 @@ if(galaxiaCanvas){
 
     gctx.beginPath();
     gctx.arc(e.x,e.y,e.r,0,Math.PI*2);
-    gctx.fillStyle = "white";
+    const colores = [
+    "#ffffff",
+    "#87cefa",
+    "#b19cd9",
+    "#add8e6"
+];
+
+gctx.fillStyle =
+    colores[Math.floor(Math.random() * colores.length)];
     gctx.fill();
 
     gctx.globalAlpha = 1;
