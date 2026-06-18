@@ -363,6 +363,12 @@ h3{
 
     animation:latido 2s infinite;
 
+    @keyframes latido{
+    0%{transform:translate(-50%,-50%) scale(1);}
+    50%{transform:translate(-50%,-50%) scale(1.15);}
+    100%{transform:translate(-50%,-50%) scale(1);}
+}
+
     animation:
     latido 2s infinite,
     flotar 5s infinite ease-in-out;
@@ -398,4 +404,20 @@ h3{
         margin-top:0;
     }
 
+}
+
+#fraseFinal{
+    position:absolute;
+    top:15%;
+    width:100%;
+    text-align:center;
+    color:white;
+    font-size:28px;
+    opacity:0;
+    animation: aparecer 4s forwards;
+}
+
+@keyframes aparecer{
+    from{opacity:0;}
+    to{opacity:1;}
 }
