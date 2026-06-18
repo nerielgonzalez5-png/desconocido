@@ -58,6 +58,12 @@ function iniciarSorpresa() {
 
     setTimeout(() => {
 
+    document.getElementById("btnGalaxia").style.display = "inline-block";
+
+}, 13000);
+
+    setTimeout(() => {
+
         document
             .getElementById("corazonLuz")
             .classList.add("mostrar");
@@ -183,5 +189,13 @@ document.getElementById("btnContinuar").onclick = function() {
         iniciarSorpresa();
 
     }, 14000);
+
+};
+
+document.getElementById("btnGalaxia").onclick = function() {
+
+    document.getElementById("contenido").style.display = "none";
+
+    document.getElementById("galaxia").style.display = "block";
 
 };
