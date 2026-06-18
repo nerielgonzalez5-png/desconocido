@@ -230,6 +230,9 @@ if(galaxiaCanvas){
 
         gctx.fillStyle = "black";
         gctx.fillRect(0,0,galaxiaCanvas.width,galaxiaCanvas.height);
+        gctx.fillStyle = "white";
+        gctx.font = "30px Arial";
+        gctx.fillText("ESTRELLAS TEST", 50, 50);
 
         estrellas.forEach(e=>{
 
