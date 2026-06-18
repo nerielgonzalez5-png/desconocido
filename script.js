@@ -218,6 +218,8 @@ if(galaxiaCanvas){
             y: Math.random() * galaxiaCanvas.height,
             r: Math.random() * 3 + 0.5,
             v: Math.random() * 0.3 + 0.1
+            alpha: Math.random(),
+            dir: Math.random() > 0.5 ? 1 : -1
         });
 
     }
