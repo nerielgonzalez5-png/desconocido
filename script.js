@@ -111,6 +111,8 @@ function animate(){
 
         ctx.fill();
 
+        gctx.globalAlpha = 1;
+
         p.y -= p.speed;
 
         if(p.y < 0){
