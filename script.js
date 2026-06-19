@@ -85,7 +85,7 @@ for(let i = 0; i < 1000; i++){
     particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        size: Math.random() * 3 + 1,
+        size: Math.random() * 1.2 + 0.3,
         speed: Math.random() * 1 + 0.5
     });
 
