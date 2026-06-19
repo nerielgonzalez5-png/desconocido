@@ -21,7 +21,7 @@ function verificarNombre() {
     }
 }
 
-const mensaje = Gracias por formar parte de mi vida.
+const mensaje = `Gracias por formar parte de mi vida.
 Este programa fue hecho especialmente para ti.
 Quizás no sea perfecto,
 pero cada línea fue escrita pensando en ti.
@@ -29,7 +29,7 @@ Tal vez no sea el regalo más caro del mundo,
 pero fue creado con mucho cariño para ti.
 Espero que este nuevo año te traiga felicidad,
 éxitos y muchos momentos hermosos.
-Feliz cumpleaños, Lina ❤️;
+Feliz cumpleaños, Lina ❤️`;
 
 function iniciarSorpresa() {
 
