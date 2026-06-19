@@ -265,7 +265,7 @@ function animarGalaxia(){
 
         gctx.globalAlpha = 1;
 
-        estrellas.push({
+ estrellas.push({
             angulo: Math.random() * Math.PI * 2,
             distancia: Math.random() * 700,
             r: Math.random() * 3 + 1,
@@ -290,6 +290,8 @@ estrellas.forEach(e => {
     gctx.fill();
    
     });
+
+});
 
     requestAnimationFrame(animarGalaxia);
 }
