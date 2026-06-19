@@ -152,7 +152,7 @@ document.getElementById("btnContinuar").onclick = function() {
     }, 3000);
 
     setTimeout(() => {
-        mensaje.innerHTML += "<br><br>🎂 FELIZ CUMPLEAÑOS 🎂";
+        mensaje.innerHTML += "<br><br> FELIZ CUMPLEAÑOS 🎂";
     }, 4000);
 
     setTimeout(() => {
@@ -168,7 +168,7 @@ document.getElementById("btnContinuar").onclick = function() {
     }, 8000);
 
     setTimeout(() => {
-        mensaje.innerHTML += "<br><br>✨ NUEVA ETAPA DESBLOQUEADA = 20 años ¡¡tas vieja!! ✨";
+        mensaje.innerHTML += "<br><br> NUEVA ETAPA DESBLOQUEADA = 20 años ¡¡tas vieja!! ";
     }, 9000);
 
     setTimeout(() => {
@@ -225,69 +225,54 @@ if(galaxiaCanvas){
     });
 
 }
-
-    function animarGalaxia(){
-
-        function animarGalaxia(){
+    
+function animarGalaxia(){
 
     gctx.fillStyle = "black";
     gctx.fillRect(0,0,galaxiaCanvas.width,galaxiaCanvas.height);
 
-    gctx.fillStyle = "white";
-    gctx.font = "50px Arial";
-    gctx.fillText("HOLA", 200, 200);
+    estrellas.forEach(e => {
+
+        e.alpha += 0.01 * e.dir;
+
+        if(e.alpha > 1){
+            e.dir = -1;
+        }
+
+        if(e.alpha < 0.2){
+            e.dir = 1;
+        }
+
+        gctx.globalAlpha = e.alpha;
+
+        gctx.beginPath();
+        gctx.arc(e.x, e.y, e.r, 0, Math.PI * 2);
+
+        const colores = [
+            "#ffffff",
+            "#87cefa",
+            "#b19cd9",
+            "#add8e6"
+        ];
+
+        gctx.fillStyle =
+            colores[Math.floor(Math.random() * colores.length)];
+
+        gctx.shadowBlur = 15;
+        gctx.shadowColor = "white";
+
+        gctx.fill();
+
+        gctx.globalAlpha = 1;
+
+        e.y += e.v;
+
+        if(e.y > galaxiaCanvas.height){
+            e.y = 0;
+            e.x = Math.random() * galaxiaCanvas.width;
+        }
+
+    });
 
     requestAnimationFrame(animarGalaxia);
-
-}
-
-        estrellas.forEach(e=>{
-            
-            e.alpha += 0.01 * e.dir;
-
-    if(e.alpha > 1){
-        e.dir = -1;
-    }
-
-    if(e.alpha < 0.2){
-        e.dir = 1;
-    }
-
-    gctx.globalAlpha = e.alpha;
-
-    gctx.beginPath();
-    gctx.arc(e.x,e.y,e.r,0,Math.PI*2);
-            
-    const colores = [
-        "#ffffff",
-        "#87cefa",
-        "#b19cd9",
-        "#add8e6"
-];
-            
-    gctx.fillStyle =
-    colores[Math.floor(Math.random() * colores.length)];
-            
-    gctx.fill();
-            
-    gctx.shadowBlur = 15;
-    gctx.shadowColor = "white";
-            
-    gctx.globalAlpha = 1;
-
-    e.y += e.v;
-
-    if(e.y > galaxiaCanvas.height){
-        e.y = 0;
-        e.x = Math.random() * galaxiaCanvas.width;
-    }
-
-});
-
-        requestAnimationFrame(animarGalaxia);
-
-    }
-
-    animarGalaxia();
-
 }
