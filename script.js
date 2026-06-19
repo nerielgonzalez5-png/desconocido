@@ -107,8 +107,10 @@ function animate(){
             Math.PI * 2
         );
 
-        ctx.fillStyle = "#4da6ff";
-
+        ctx.fillStyle = "white";
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = "white";
+        
         ctx.fill();
 
         ctx.globalAlpha = 1;
