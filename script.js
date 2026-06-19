@@ -276,3 +276,7 @@ function animarGalaxia(){
 
     requestAnimationFrame(animarGalaxia);
 }
+    
+    animarGalaxia();
+
+}
