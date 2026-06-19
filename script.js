@@ -11,154 +11,200 @@ function verificarNombre() {
     if (nombre === "lina") {
 
         mensaje.innerHTML = "✓ Lina detectada";
+
         document.getElementById("btnContinuar").style.display = "inline-block";
 
     } else {
 
-        mensaje.innerHTML = "❌ intenta nuevamente.";
+        mensaje.innerHTML = "❌ ta's pendeja, intenta nuevamente.";
+
     }
 }
 
-/* =========================
-   TEXTO SECRETO
-========================= */
-
-const textoSorpresa = `Gracias por formar parte de mi vida.
+const mensaje = Gracias por formar parte de mi vida.
 Este programa fue hecho especialmente para ti.
 Quizás no sea perfecto,
 pero cada línea fue escrita pensando en ti.
-Feliz cumpleaños, Lina ❤️`;
+Tal vez no sea el regalo más caro del mundo,
+pero fue creado con mucho cariño para ti.
+Espero que este nuevo año te traiga felicidad,
+éxitos y muchos momentos hermosos.
+Feliz cumpleaños, Lina ❤️;
 
 function iniciarSorpresa() {
 
-    const texto = document.getElementById("textoSecreto");
-    const secreto = document.getElementById("secreto");
+    document.getElementById("textoSecreto").innerText = "";
 
-    texto.innerText = "";
-    secreto.classList.add("mostrar");
+    document
+        .getElementById("secreto")
+        .classList.add("mostrar");
 
     let i = 0;
 
     function escribir() {
-        if (i < textoSorpresa.length) {
-            texto.innerText += textoSorpresa.charAt(i);
+
+        if (i < mensaje.length) {
+
+            document.getElementById("textoSecreto").innerText += mensaje.charAt(i);
+
             i++;
+
             setTimeout(escribir, 40);
         }
+
     }
 
     escribir();
 
     setTimeout(() => {
-        document.getElementById("btnGalaxia").style.display = "inline-block";
-    }, 5000);
+
+    document.getElementById("btnGalaxia").style.display = "inline-block";
+
+}, 13000);
 
     setTimeout(() => {
-        document.getElementById("corazonLuz")?.classList.add("mostrar");
-    }, 3000);
-}
 
-/* =========================
-   PARTÍCULAS
-========================= */
+        document
+            .getElementById("corazonLuz")
+            .classList.add("mostrar");
+
+    }, 3000);
+
+}
 
 const canvas = document.getElementById("particulas");
-const ctx = canvas?.getContext("2d");
+const ctx = canvas.getContext("2d");
 
-if (canvas && ctx) {
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+let particles = [];
 
-    let particles = [];
+for(let i = 0; i < 1000; i++){
 
-    for (let i = 0; i < 300; i++) {
-        particles.push({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            size: Math.random() * 3 + 1,
-            speed: Math.random() * 1 + 0.5
-        });
-    }
+    particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 3 + 1,
+        speed: Math.random() * 1 + 0.5
+    });
 
-    function animate() {
-
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        particles.forEach(p => {
-
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-            ctx.fillStyle = "#4da6ff";
-            ctx.fill();
-
-            p.y -= p.speed;
-
-            if (p.y < 0) {
-                p.y = canvas.height;
-                p.x = Math.random() * canvas.width;
-            }
-        });
-
-        requestAnimationFrame(animate);
-    }
-
-    animate();
 }
 
-/* =========================
-   BOTÓN CONTINUAR
-========================= */
+function animate(){
 
-document.getElementById("btnContinuar").onclick = function () {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach(p => {
+
+        ctx.beginPath();
+
+        ctx.arc(
+            p.x,
+            p.y,
+            p.size,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fillStyle = "#4da6ff";
+
+        ctx.fill();
+
+        ctx.globalAlpha = 1;
+
+        p.y -= p.speed;
+
+        if(p.y < 0){
+
+            p.y = canvas.height;
+            p.x = Math.random() * canvas.width;
+
+        }
+
+    });
+
+    requestAnimationFrame(animate);
+
+}
+
+animate();
+
+document.getElementById("btnContinuar").onclick = function() {
 
     const mensaje = document.getElementById("error");
     const musica = document.getElementById("musica");
 
-    musica?.play();
+    musica.play();
+
     document.getElementById("btnContinuar").style.display = "none";
 
-    const pasos = [
-        "Buscando felicidad...",
-        "Buscando sonrisas...",
-        "Buscando recuerdos...",
-        "FELIZ CUMPLEAÑOS 🎂",
-        "Edad actual: 19",
-        "Actualizando edad...",
-        "19 ➜ 20 ❤️",
-        "NUEVA ETAPA DESBLOQUEADA 🎉"
-    ];
-
-    pasos.forEach((texto, i) => {
-        setTimeout(() => {
-            mensaje.innerHTML += "<br>" + texto;
-        }, i * 1000);
-    });
+    setTimeout(() => {
+        mensaje.innerHTML += "<br><br>Buscando felicidad...";
+    }, 1000);
 
     setTimeout(() => {
+        mensaje.innerHTML += "<br>Buscando sonrisas...";
+    }, 2000);
+
+    setTimeout(() => {
+        mensaje.innerHTML += "<br>Buscando recuerdos...";
+    }, 3000);
+
+    setTimeout(() => {
+        mensaje.innerHTML += "<br><br> FELIZ CUMPLEAÑOS 🎂";
+    }, 4000);
+
+    setTimeout(() => {
+        mensaje.innerHTML += "<br><br>Edad actual: 19";
+    }, 5000);
+
+    setTimeout(() => {
+        mensaje.innerHTML += "<br>Actualizando edad...";
+    }, 6000);
+
+    setTimeout(() => {
+        mensaje.innerHTML += "<br><br>19 ➜ 20 ❤️";
+    }, 8000);
+
+    setTimeout(() => {
+        mensaje.innerHTML += "<br><br> NUEVA ETAPA DESBLOQUEADA = 20 años ¡¡tas vieja!! ";
+    }, 9000);
+
+    setTimeout(() => {
+        mensaje.innerHTML += "<br><br>Este programa fue creado especialmente para ti.";
+    }, 10000);
+
+    setTimeout(() => {
+        mensaje.innerHTML += "<br>Espero que tengas un día increíble ❤️";
+    }, 11000);
+
+    setTimeout(() => {
+        mensaje.innerHTML += "<br><br>Abriendo sorpresa...";
+    }, 12000);
+
+    setTimeout(() => {
+
         document.getElementById("login").style.display = "none";
         document.getElementById("contenido").style.display = "block";
+
         iniciarSorpresa();
-    }, 10000);
+
+    }, 14000);
+
 };
 
-/* =========================
-   GALAXIA (ARREGLADA)
-========================= */
-
-document.getElementById("btnGalaxia").onclick = function () {
+document.getElementById("btnGalaxia").onclick = function() {
 
     document.getElementById("contenido").style.display = "none";
+
     document.getElementById("galaxia").style.display = "block";
 
-    iniciarGalaxia();
 };
 
-function iniciarGalaxia() {
+const galaxiaCanvas = document.getElementById("galaxiaCanvas");
 
-    const galaxiaCanvas = document.getElementById("galaxiaCanvas");
-
-    if (!galaxiaCanvas) return;
+if(galaxiaCanvas){
 
     const gctx = galaxiaCanvas.getContext("2d");
 
@@ -167,38 +213,70 @@ function iniciarGalaxia() {
 
     let estrellas = [];
 
-    for (let i = 0; i < 400; i++) {
-        estrellas.push({
-            x: Math.random() * galaxiaCanvas.width,
-            y: Math.random() * galaxiaCanvas.height,
-            r: Math.random() * 3 + 1,
-            alpha: Math.random(),
-            speed: Math.random() * 0.5 + 0.2
-        });
-    }
+    for(let i = 0; i < 500; i++){
 
-    function animarGalaxia() {
+    estrellas.push({
+        x: Math.random() * galaxiaCanvas.width,
+        y: Math.random() * galaxiaCanvas.height,
+        r: Math.random() * 8 + 3,
+        v: Math.random() * 0.2 + 0.05,
+        alpha: Math.random(),
+        dir: Math.random() > 0.5 ? 1 : -1
+    });
 
-        gctx.fillStyle = "black";
-        gctx.fillRect(0, 0, galaxiaCanvas.width, galaxiaCanvas.height);
+}
+    
+function animarGalaxia(){
 
-        const cx = galaxiaCanvas.width / 2;
-        const cy = galaxiaCanvas.height / 2;
+    gctx.fillStyle = "black";
+    gctx.fillRect(0,0,galaxiaCanvas.width,galaxiaCanvas.height);
 
-        estrellas.forEach(e => {
+    estrellas.forEach(e => {
 
-            e.x += Math.sin(e.alpha) * 0.5;
-            e.y += Math.cos(e.alpha) * 0.5;
+        e.alpha += 0.01 * e.dir;
 
-            gctx.globalAlpha = 1;
-            gctx.beginPath();
-            gctx.arc(e.x, e.y, e.r, 0, Math.PI * 2);
-            gctx.fillStyle = "white";
-            gctx.fill();
-        });
+        if(e.alpha > 1){
+            e.dir = -1;
+        }
 
-        requestAnimationFrame(animarGalaxia);
-    }
+        if(e.alpha < 0.2){
+            e.dir = 1;
+        }
 
-    animarGalaxia();
+        gctx.globalAlpha = e.alpha;
+
+        gctx.beginPath();
+        gctx.arc(e.x, e.y, e.r, 0, Math.PI * 2);
+
+        const colores = [
+            "#ffffff",
+            "#87cefa",
+            "#b19cd9",
+            "#add8e6"
+        ];
+
+        gctx.fillStyle =
+            colores[Math.floor(Math.random() * colores.length)];
+
+        gctx.shadowBlur = 15;
+        gctx.shadowColor = "white";
+
+        gctx.fill();
+
+        gctx.globalAlpha = 1;
+
+        e.y += e.v;
+
+        if(e.y > galaxiaCanvas.height){
+            e.y = 0;
+            e.x = Math.random() * galaxiaCanvas.width;
+        }
+
+    });
+
+    requestAnimationFrame(animarGalaxia);
+}
+
+animarGalaxia();
+
 }
