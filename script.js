@@ -265,13 +265,30 @@ function animarGalaxia(){
 
         gctx.globalAlpha = 1;
 
-        e.y += e.v;
+        estrellas.push({
+            angulo: Math.random() * Math.PI * 2,
+            distancia: Math.random() * 700,
+            r: Math.random() * 3 + 1,
+            velocidad: Math.random() * 0.001 + 0.0005,
+            alpha: Math.random()
 
-        if(e.y > galaxiaCanvas.height){
-            e.y = 0;
-            e.x = Math.random() * galaxiaCanvas.width;
-        }
+      const cx = galaxiaCanvas.width / 2;
+    const cy = galaxiaCanvas.height / 2;
 
+estrellas.forEach(e => {
+
+    e.angulo += e.velocidad;
+
+    e.x = cx + Math.cos(e.angulo) * e.distancia;
+    e.y = cy + Math.sin(e.angulo) * e.distancia;
+
+    gctx.globalAlpha = e.alpha;
+
+    gctx.beginPath();
+    gctx.arc(e.x, e.y, e.r, 0, Math.PI * 2);
+    gctx.fillStyle = "white";
+    gctx.fill();
+   
     });
 
     requestAnimationFrame(animarGalaxia);
