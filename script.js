@@ -80,7 +80,7 @@ canvas.height = window.innerHeight;
 
 let particles = [];
 
-for(let i = 0; i < 500; i++){
+for(let i = 0; i < 300; i++){
 
     particles.push({
         x: Math.random() * canvas.width,
@@ -215,7 +215,7 @@ if(galaxiaCanvas){
 
     let estrellas = [];
 
-    for(let i = 0; i < 500; i++){
+    for(let i = 0; i < 150; i++){
 
     estrellas.push({
         x: Math.random() * galaxiaCanvas.width,
@@ -250,7 +250,7 @@ function animarGalaxia(){
         gctx.beginPath();
         gctx.arc(e.x, e.y, e.r, 0, Math.PI * 2);
 
-        const colores = [
+    const colores = [
             "#ffffff",
             "#87cefa",
             "#b19cd9",
@@ -260,7 +260,7 @@ function animarGalaxia(){
         gctx.fillStyle =
             colores[Math.floor(Math.random() * colores.length)];
 
-        gctx.shadowBlur = 15;
+        gctx.shadowBlur = 5;
         gctx.shadowColor = "white";
 
         gctx.fill();
