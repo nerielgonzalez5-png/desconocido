@@ -80,7 +80,7 @@ canvas.height = window.innerHeight;
 
 let particles = [];
 
-for(let i = 0; i < 1000; i++){
+for(let i = 0; i < 500; i++){
 
     particles.push({
         x: Math.random() * canvas.width,
